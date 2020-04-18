@@ -2,9 +2,9 @@
 
 ## requirements
 
-[hundredrabbits/Orca](https://github.com/hundredrabbits/Orca)
-[hundredrabbits/Pilot](https://github.com/hundredrabbits/Pilot)
-[samaaron/sonic-pi](https://github.com/samaaron/sonic-pi) (optional)
+- [hundredrabbits/Orca](https://github.com/hundredrabbits/Orca)
+- [hundredrabbits/Pilot](https://github.com/hundredrabbits/Pilot)
+- [samaaron/sonic-pi](https://github.com/samaaron/sonic-pi) (optional)
 
 
 
