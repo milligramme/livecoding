@@ -17,29 +17,29 @@ void setup() {
   frameRate(25);
   oscP5 = new OscP5(this,12000);
   
-  remoteLocation = new NetAddress("127.0.0.1",12000);  
+  remoteLocation = new NetAddress("127.0.0.1",12000);
   mouseLocation = new PVector(0, 0);
   r = 100;
 
-  # settings
+  // settings
   frameRate(12); # TDB sync with orca
   colorMode(HSB, 360, 100, 100);
   ellipseMode(CENTER);
   noStroke();
-  background(0, 0, 0);  
+  background(0, 0, 0);
 }
 
 void draw() {
   ellipse(mouseLocation.x, mouseLocation.y, r, r);
   
-  # reset every 100 frame counts
+  // reset every 100 frame counts
   if(frameCount % 100 == 0) {
     background(0, 0, 0);
-  }    
+  }
 }
 
 void oscEvent(OscMessage msg) {
-  # set location of circles and fill color
+  // set location of circles and fill color
   if(msg.checkAddrPattern("/t") == true) {
     mouseLocation.x = width / 35 * msg.get(0).intValue();
     mouseLocation.y = height / 35 * msg.get(1).intValue();
@@ -47,8 +47,8 @@ void oscEvent(OscMessage msg) {
     fill(360 / 35 * msg.get(2).intValue(), 50, 50);
   }
   
-  # set size of circles
+  // set size of circles
   if(msg.checkAddrPattern("/c") == true) {
-    r = 100 / 35 * msg.get(0).intValue(); 
+    r = 100 / 35 * msg.get(0).intValue();
   }
 }
