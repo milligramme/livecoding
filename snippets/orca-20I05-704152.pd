@@ -1,0 +1,46 @@
+#N canvas 723 23 450 481 10;
+#X obj 138 99 notein;
+#X floatatom 128 134 5 0 0 0 - - -;
+#X floatatom 177 172 5 0 0 0 - - -;
+#X floatatom 201 155 5 0 0 0 - - -;
+#X obj 96 216 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 174 212 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 325 139 print received;
+#X obj 383 116 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 125 313 osc~;
+#X obj 136 393 dac~;
+#X obj 124 269 mtof;
+#X floatatom 44 300 5 0 0 0 - - -;
+#X floatatom 174 248 5 0 0 0 - - -;
+#X floatatom 196 317 5 0 0 0 - - -;
+#X obj 262 132 oscparse;
+#X obj 263 176 list trim;
+#X obj 270 42 netreceive -u -b 3000;
+#X obj 249 238 route c;
+#X obj 335 230 route d;
+#X floatatom 300 270 5 0 0 0 - - -;
+#X obj 175 279 + 20;
+#X connect 0 0 1 0;
+#X connect 0 1 2 0;
+#X connect 0 2 3 0;
+#X connect 1 0 4 0;
+#X connect 1 0 10 0;
+#X connect 2 0 5 0;
+#X connect 8 0 9 0;
+#X connect 10 0 8 0;
+#X connect 10 0 11 0;
+#X connect 12 0 20 0;
+#X connect 14 0 15 0;
+#X connect 15 0 17 0;
+#X connect 15 0 18 0;
+#X connect 16 0 6 0;
+#X connect 16 0 7 0;
+#X connect 16 0 13 0;
+#X connect 16 0 14 0;
+#X connect 17 0 12 0;
+#X connect 18 0 19 0;
+#X connect 19 0 8 1;
+#X connect 20 0 10 0;
